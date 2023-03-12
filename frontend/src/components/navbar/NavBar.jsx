@@ -11,7 +11,7 @@ const NavBar = ({ user }) => {
             className="navbar-brand font-monospace text-primary fs-1"
             to="/"
           >
-            Your True Realtor
+            Your True Friend
           </Link>
           <p className="fs-6 text-primary ">Online Realtor & Consultant</p>
         </h1>

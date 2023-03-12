@@ -1,8 +1,11 @@
+import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import React, { Component } from "react";
-import NavBar from "./component/navbar/navbar";
-import Login from "./component/login/Login";
-import PrivateRoutes from "./component/ProtectedRoutes";
+import NavBar from "./components/navbar/NavBar";
+import Login from "./components/login/Login";
+import Logout from "./components/logout/Logout";
+import PrivateRoutes from "./components/ProtectedRoutes";
+import About from "./components/dashboard/DashBoard";
 import auth from "./services/authService";
 
 class App extends Component {
@@ -24,8 +27,9 @@ class App extends Component {
         <article>
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route path="/" element={<Navigate to={"/"} />} />
+              <Route element={<About />} path="/" />
             </Route>
+            <Route path="/logout" element={<Logout />} />
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Navigate to={"/"} />} />
           </Routes>

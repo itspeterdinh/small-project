@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poppins:wght@300;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: 400ms all ease;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  min-height: 10vh;
+}
+
+article {
+  min-height: 80vh;
+}
+
+.article-fill-height {
+  min-height: 80vh;
+  height: 100%;
+}
+
+footer {
+  min-height: 10rem;
+}
+
+article {
+  flex: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(104, 187, 227, 0.5);
+  box-shadow: 0 0 1px 1px #bbb, inset 0 0 7px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to left, #96a6bf, #63738c);
+  box-shadow: inset 0 0 1px 1px #5c6670;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to left, #8391a6, #536175);
+}
+
+h1,
+h5 {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .container,
+  .container-fluid {
+    padding: 0;
+  }
+}

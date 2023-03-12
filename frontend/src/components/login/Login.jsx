@@ -3,7 +3,7 @@ import Joi from "joi";
 import "./styles.css";
 import Form from "../common/Form";
 import auth from "../../services/authService";
-import databasePic from "./loginPage/database-login.png";
+import pic from "./loginPage/realestate.jpeg";
 
 class Login extends Form {
   state = {
@@ -41,14 +41,18 @@ class Login extends Form {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row-div row text-center shadow-sm">
+        <div
+          style={{
+            background: `url(${pic}) center`,
+          }}
+          className="row-div row text-center shadow-sm"
+        >
           <div
             style={{
-              backgroundColor: "rgba(242,243,241,0.5)",
+              backgroundColor: "rgba(242,243,241,0.4)",
               minHeight: "95vh",
               color: "#fff",
               transparency: "",
-              borderRadius: "20px 0 0 20px",
               boxShadow: "-10px 2px 3px 1px rgba(255, 255, 255, .2)",
               zIndex: "1",
             }}

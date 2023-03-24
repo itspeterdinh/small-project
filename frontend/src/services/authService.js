@@ -1,12 +1,12 @@
-import httpService from "./httpService";
+import httpService from './httpService';
 
-const apiEndPoint = "/users/login";
-const tokenKey = "token";
+const apiEndPoint = '/users/login';
+const tokenKey = 'token';
 
 httpService.setJwt(getJwt());
 
 export async function login(email, password) {
-  console.log("Hello");
+  console.log('Hello');
   try {
     const {
       data: { status, data },
@@ -15,8 +15,8 @@ export async function login(email, password) {
       password: password,
     });
 
-    if (status === "success") {
-      window.localStorage.setItem("user", JSON.stringify(data.user));
+    if (status === 'success') {
+      window.localStorage.setItem('user', JSON.stringify(data.user));
     }
   } catch (err) {
     console.log(err);
@@ -28,12 +28,12 @@ export function jwtLogin(jwt) {
 }
 
 export function logout() {
-  window.localStorage.removeItem("user");
+  window.localStorage.removeItem('user');
 }
 
 export function getCurrentUser() {
   try {
-    return localStorage.getItem("user");
+    return localStorage.getItem('user');
   } catch (error) {
     return null;
   }

@@ -1,0 +1,51 @@
+.bordered-layout {
+  .navbar-header {
+    .brand-logo > img {
+      transition: all 0.3s ease;
+      max-width: none !important;
+      width: 79px !important;
+      height: auto !important;
+    }
+  }
+
+  .main-menu .navigation,
+  .main-menu {
+    background: white;
+    &:not(.expanded) {
+      .navbar-header {
+        padding-left: 1rem;
+        .brand-logo > img {
+          width: 56px !important;
+        }
+      }
+    }
+  }
+
+  .main-menu .main-menu-content .navigation {
+    .nav-item > a {
+      color: #6a7482;
+    }
+    .nav-item.active > a {
+      box-shadow: none;
+      background: rgba(186, 191, 199, 0.12);
+      border-radius: 5px;
+      color: $primary !important;
+      font-weight: bold;
+    }
+  }
+
+  // sub menu
+  .main-menu.menu-light {
+    .navigation > li.open:not(.menu-item-closing) > a {
+      box-shadow: none;
+      background: rgba(186, 191, 199, 0.12);
+      border-radius: 5px;
+      color: $primary;
+      font-weight: bold;
+    }
+    .navigation > li ul .active {
+      box-shadow: none;
+      background: transparent;
+    }
+  }
+}

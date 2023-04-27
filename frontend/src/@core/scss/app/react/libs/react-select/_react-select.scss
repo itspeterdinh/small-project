@@ -1,0 +1,61 @@
+@import '@core/scss/base/bootstrap-extended/include';
+@import '@core/scss/base/components/include';
+
+// Select Control(Input)
+.react-select {
+  .select__control {
+    border-color: $custom-control-border-color;
+    &.select__control--is-disabled {
+      .select__indicator-separator {
+        display: none;
+      }
+    }
+  }
+}
+
+.is-invalid {
+  .select__control {
+    border-color: $danger;
+  }
+}
+
+.react-select-sm {
+  .select__control {
+    height: 2.142rem;
+    min-height: 2.142rem;
+  }
+}
+
+.select__control,
+.react-select__control {
+  .select__placeholder {
+    color: $text-muted !important;
+  }
+  .select__multi-value {
+    background-color: $primary;
+    .select__multi-value__label,
+    .select__multi-value__remove {
+      color: $white;
+    }
+  }
+}
+
+.select__control--is-focused,
+.react-select__control--is-focused {
+  box-shadow: 0 0 0 1px $primary !important;
+  &:hover {
+    border-color: $primary !important;
+  }
+}
+
+.select__menu,
+.react-select__menu {
+  .select__option--is-focused {
+    background-color: rgba($primary, 0.12);
+    color: $primary;
+  }
+  .select__option--is-selected {
+    background-color: $primary !important;
+    color: $white;
+  }
+}

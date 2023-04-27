@@ -1,0 +1,13 @@
+// Main menu expanded
+.main-menu {
+  .navigation {
+    > li {
+      > a {
+        > svg,
+        > i {
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+}

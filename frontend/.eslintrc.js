@@ -1,0 +1,52 @@
+module.exports = {
+  extends: ['airbnb-base', 'prettier', 'eslint:recommended', 'plugin:react/recommended'],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    allowImportExportEverywhere: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    mocha: true,
+    jest: true,
+  },
+  plugins: [],
+  rules: {
+    'no-console': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        vars: 'local',
+        args: 'none',
+      },
+    ],
+    'no-plusplus': 'off',
+    'no-underscore-dangle': 'off',
+    'import/extensions': ['off'],
+    'class-methods-use-this': ['off'],
+    'no-useless-constructor': ['off'],
+    'import/no-extraneous-dependencies': 'off',
+    'no-param-reassign': 'off',
+    'no-empty': [2, { allowEmptyCatch: true }],
+    'no-nested-ternary': 'off',
+    'no-shadow': 'off',
+    'arrow-body-style': 'off',
+    'global-require': 'off',
+    'import/prefer-default-export': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/no-unescaped-entities': 'off',
+    'consistent-return': 'off',
+    'no-unused-expressions': 'off',
+    'react/display-name': 'off',
+    'import/no-cycle': 'off',
+    'import/no-named-as-default': 'off',
+  },
+}

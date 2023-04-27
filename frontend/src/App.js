@@ -1,42 +1,94 @@
-import "./App.css";
-import { Routes, Route, Navigate } from "react-router-dom";
-import React, { Component } from "react";
-import NavBar from "./components/navbar/NavBar";
-import Login from "./components/login/Login";
-import Logout from "./components/logout/Logout";
-import PrivateRoutes from "./components/ProtectedRoutes";
-import About from "./components/dashboard/DashBoard";
-import auth from "./services/authService";
+/* eslint-disable react/prop-types */
+import 'regenerator-runtime/runtime.js'
 
-class App extends Component {
-  state = {};
-  async componentDidMount() {
-    const user = auth.getCurrentUser();
-    this.setState({ user });
-  }
-  render() {
-    return (
-      <main
-        style={{ paddingLeft: "0", paddingRight: "0" }}
-        className="container-fluid"
-      >
-        <header>
-          <NavBar user={this.state.user} />
-        </header>
+import React, { Suspense } from 'react'
+import { BrowserRouter as AppRouter } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
+import { QueryClientProvider, Hydrate } from 'react-query'
+import _each from 'lodash/each'
 
-        <article>
-          <Routes>
-            <Route element={<PrivateRoutes />}>
-              <Route element={<About />} path="/" />
-            </Route>
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Navigate to={"/"} />} />
-          </Routes>
-        </article>
-      </main>
-    );
+// -- react query client --
+// import queryClient from '@src/apis/client'
+
+// ** Redux Imports
+import { Provider } from 'react-redux'
+// import { store } from '@core/redux/storeConfig/store'
+
+// ** Toast & ThemeColors Context
+import { ToastContainer } from 'react-toastify'
+// import { ThemeContext } from '@core/utility/context/ThemeColors'
+
+// Google chart
+// import GoogleChartProvider from '@domains/googleChart'
+
+// Error boundary
+// import ErrorBoundary from '@domains/userTracker/ErrorBoundary'
+
+// Router
+import { HelmetProvider } from 'react-helmet-async'
+// import Router from './router/Router'
+
+// ** Ripple Button
+// import '@core/components/ripple-button'
+
+// ** PrismJS
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/components/prism-jsx.min'
+
+// ** React Perfect Scrollbar
+import 'react-perfect-scrollbar/dist/css/styles.css'
+
+// ** React Circulat Progressbar
+import 'react-circular-progressbar/dist/styles.css'
+
+// // ** React Toastify
+// import '@core/scss/react/libs/toastify/toastify.scss'
+
+// // ** Core styles
+// import '@core/assets/fonts/feather/iconfont.css'
+// import '@core/scss/core.scss'
+// import '@core/scss/amo/style.scss'
+
+// ** Tailwind style
+import '@src/styles/tailwind.css'
+
+const __RECOIL_STATE__ = (process.browser && window.__RECOIL_STATE__) || []
+const __REACT_QUERY_STATE__ = (process.browser && window.__REACT_QUERY_STATE__) || {}
+
+export const initializeRecoilState =
+  (initState = []) =>
+  ({ set }) => {
+    _each(initState, ({ key, value }) => {
+      if (!key || !value) return
+      set({ key }, value)
+    })
   }
+
+export const App = ({ host }) => {
+  global.host = host
+
+  return (
+    <Provider store={store}>
+      <Suspense fallback={null}>
+        <ToastContainer icon={false} />
+      </Suspense>
+    </Provider>
+  )
 }
 
-export default App;
+export const ClientApp = () => (
+  <AppRouter>
+    <RecoilRoot initializeState={initializeRecoilState(__RECOIL_STATE__)}>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={__REACT_QUERY_STATE__}>
+          <HelmetProvider>
+            <App />
+          </HelmetProvider>
+        </Hydrate>
+      </QueryClientProvider>
+    </RecoilRoot>
+  </AppRouter>
+)
+
+export default App

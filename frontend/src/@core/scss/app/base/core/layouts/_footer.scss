@@ -1,0 +1,8 @@
+footer {
+  &.footer {
+    // override styles for mobile
+    @include media-breakpoint-down(md) {
+      min-height: 0;
+    }
+  }
+}

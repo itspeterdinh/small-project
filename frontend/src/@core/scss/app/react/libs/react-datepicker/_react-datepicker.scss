@@ -1,0 +1,16 @@
+@import '@core/scss/base/bootstrap-extended/include';
+@import '@core/scss/base/components/include';
+
+.react-datepicker-wrapper {
+  height: 0;
+  display: block;
+}
+
+.react-datepicker {
+  .react-datepicker__triangle::before {
+    left: -27px !important;
+  }
+  .react-datepicker__triangle::after {
+    left: -27px !important;
+  }
+}

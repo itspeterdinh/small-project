@@ -9,10 +9,15 @@
 /coverage
 
 # production
-/build
+/dist
+/server-dist
+
+# next
+src/.next
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -21,4 +26,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.docz
+.eslintcache
+.vscode
+
+/react-shell-scripts
+
 

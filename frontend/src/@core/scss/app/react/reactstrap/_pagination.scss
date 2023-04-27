@@ -1,0 +1,9 @@
+.pagination {
+  &.react-paginate {
+    justify-content: center;
+    margin-top: 20px;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+  }
+}

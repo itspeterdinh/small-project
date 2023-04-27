@@ -1,0 +1,8 @@
+node_modules
+dist
+server-dist
+coverage
+.vscode
+.env*
+/public
+static

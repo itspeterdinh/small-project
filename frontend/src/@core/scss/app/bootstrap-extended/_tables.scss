@@ -1,0 +1,22 @@
+// if not using table-light class then also header color should apply
+.table:not(.table-dark):not(.table-light) {
+  thead:not(.thead-dark) th,
+  tfoot:not(.thead-dark) th {
+    background-color: #eef1f5;
+  }
+}
+
+.table {
+  th,
+  td {
+    padding: $table-cell-padding 1.2rem;
+  }
+
+  tr {
+    @include hover() {
+      td {
+        background-color: $table-hover-bg;
+      }
+    }
+  }
+}

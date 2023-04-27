@@ -1,0 +1,15 @@
+/*=========================================================================================
+	File Name: customizer.scss
+	Description: CSS used for demo purpose only. Remove this css from your project.
+	----------------------------------------------------------------------------------------
+	Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.customizer {
+  @include media-breakpoint-down(md) {
+    width: 100vw;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,27 @@
+module.exports = {
+  files: ['src/pages/**/*.js', 'src/forms/**/*.js', 'src/@domains/**/*.js'],
+  from: [
+    `'@assets/`,
+    `'@components/`,
+    `'@layouts/`,
+    `'@store/`,
+    `'@styles/`,
+    `'@configs/`,
+    `'@utils/`,
+    `'@utils'`,
+    `'@hooks/`,
+    `'@src/utility`,
+  ],
+  to: [
+    `'@core/assets/`,
+    `'@core/components/`,
+    `'@core/layouts/`,
+    `'@core/redux/`,
+    `'@core/scss/`,
+    `'@src/configs/`,
+    `'@core/utility/Utils/`,
+    `'@core/utility/Utils'`,
+    `'@core/utility/hooks/`,
+    `'@core/utility/`,
+  ],
+}

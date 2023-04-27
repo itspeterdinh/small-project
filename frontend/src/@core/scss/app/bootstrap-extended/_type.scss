@@ -1,0 +1,39 @@
+// text heading color
+.text-body-heading {
+  color: $headings-color;
+  &:hover {
+    color: inherit !important;
+  }
+}
+// text body hover color if have link
+.text-body {
+  &[href]:hover {
+    color: $link-hover-color !important;
+  }
+}
+
+// Weight and italics
+.font-weight-light {
+  font-weight: $font-weight-light !important;
+}
+.font-weight-lighter {
+  font-weight: $font-weight-lighter !important;
+}
+.font-weight-normal {
+  font-weight: $font-weight-normal !important;
+}
+.font-weight-medium {
+  font-weight: $font-weight-medium !important;
+}
+.font-weight-semi-bold {
+  font-weight: $font-weight-semi-bold !important;
+}
+.font-weight-bold {
+  font-weight: $font-weight-bold !important;
+}
+.font-weight-bolder {
+  font-weight: $font-weight-bolder !important;
+}
+.font-italic {
+  font-style: italic !important;
+}

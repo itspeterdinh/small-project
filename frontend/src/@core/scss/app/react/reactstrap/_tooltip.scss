@@ -1,0 +1,27 @@
+.tooltip-inner {
+  background-color: $white;
+  color: $body-color;
+  border-radius: 0.375rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1rem;
+}
+
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: $white;
+}
+
+.bs-tooltip-auto[x-placement^='top'] .arrow::before,
+.bs-tooltip-top .arrow::before {
+  border-top-color: $white;
+}
+
+.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+.bs-tooltip-left .arrow::before {
+  border-left-color: $white;
+}
+
+.bs-tooltip-auto[x-placement^='right'] .arrow::before,
+.bs-tooltip-right .arrow::before {
+  border-right-color: $white;
+}

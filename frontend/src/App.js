@@ -8,11 +8,11 @@ import { QueryClientProvider, Hydrate } from 'react-query'
 import _each from 'lodash/each'
 
 // -- react query client --
-// import queryClient from '@src/apis/client'
+import queryClient from '@src/apis/client'
 
 // ** Redux Imports
 import { Provider } from 'react-redux'
-// import { store } from '@core/redux/storeConfig/store'
+import { store } from '@core/redux/storeConfig/store'
 
 // ** Toast & ThemeColors Context
 import { ToastContainer } from 'react-toastify'
